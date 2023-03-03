@@ -40,13 +40,20 @@ function incrementCounter() {
       const currentValueAsNumber = +currentValue;
   
       // increment by 1
-      const newValue = currentValueAsNumber + 1;
+      let newValue = currentValueAsNumber + 1;
 
       // check if new value is greater than 5
       if (newValue > 5) {
+
         // if it is, force it to be 5 instead.
         newValue = 5;
+
+
+        // Give visual indicator that limit has been reached
+        counterEl.classList.add('counter--limit');
       }
+
+
   
       // set counter element with new value
       counterValueEl.textContent = newValue;
