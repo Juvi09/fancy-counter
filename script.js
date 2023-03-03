@@ -10,6 +10,16 @@ const counterTitleEl =  document.querySelector('.counter__title');
 resetButtonEl.addEventListener('click', function(){
     // set counter to 0
     counterValueEl.textContent = 0;
+
+    // reset background colour
+    counterEl.classList.remove('counter--limit');
+
+    // reset counter title
+    counterTitleEl.textContent = 'fancy Counter';
+
+    // enable increase and decrease buttons
+    increaseButtonEl.disabled = false;
+    decreaseButtonEl.disabled = false;
 });
 
 
@@ -54,7 +64,11 @@ function incrementCounter() {
         counterEl.classList.add('counter--limit');
 
         // update counter title to say limit has been reached
-        counterTitleEl.textContent = 'Limit! Buy Pro for >5';
+        counterTitleEl.innerHTML = 'Limit! Buy <b>Pro</b> for >5';
+
+        // disable increase and decrease buttons
+        increaseButtonEl.disabled = true;
+        decreaseButtonEl.disabled = true;
       }
 
 
