@@ -20,6 +20,9 @@ resetButtonEl.addEventListener('click', function(){
     // enable increase and decrease buttons
     increaseButtonEl.disabled = false;
     decreaseButtonEl.disabled = false;
+
+    // unfocus (blur) reset button
+    resetButtonEl.blur();
 });
 
 
@@ -41,6 +44,9 @@ decreaseButtonEl.addEventListener('click', function(){
       
     // update counter value with new value
      counterValueEl.textContent = newValue;
+
+     // unfocus (blur) button
+     decreaseButtonEl.blur()
 });
 
 function incrementCounter() {
@@ -75,6 +81,9 @@ function incrementCounter() {
   
       // set counter element with new value
       counterValueEl.textContent = newValue;
+
+      // unfocus (blur) button
+      increaseButtonEl.blur()
 }
 
 increaseButtonEl.addEventListener('click', incrementCounter);
