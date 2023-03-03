@@ -1,3 +1,4 @@
+const counterEl = document.querySelector('.counter');
 const increaseButtonEl = document.querySelector('.counter__button--increase');
 const decreaseButtonEl = document.querySelector('.counter__button--decrease');
 const resetButtonEl = document.querySelector('.counter__reset-button')
@@ -40,6 +41,12 @@ function incrementCounter() {
   
       // increment by 1
       const newValue = currentValueAsNumber + 1;
+
+      // check if new value is greater than 5
+      if (newValue > 5) {
+        // if it is, force it to be 5 instead.
+        newValue = 5;
+      }
   
       // set counter element with new value
       counterValueEl.textContent = newValue;
